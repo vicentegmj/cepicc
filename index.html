@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Registro Escolar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="titulo">
+      <h1>Registro Escolar</h1>
+      <p class="subtitulo">CEPI Cultura e Cooperativismo</p>
+      <p class="subtitulo">vicente.gmj@gmail.com</p>
+    </div>
+    <form id="registroForm">
+
+
+      <div class="link-container">
+        <div class="left-link">
+          <label class="radio-container">
+            <input type="radio" id="bom" name="opcao" checked />
+            <span class="emoji">😎👍</span>
+
+          </label>
+        </div>
+        <div class="right-link">
+          <label class="radio-container">
+            <input type="radio" id="mau" name="opcao" />
+            <span class="emoji">😔👎</span>
+
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <label for="aluno">Aluno(s)</label>
+        <textarea id="myTextarea1" required></textarea>
+      </div>
+
+      <div class="buttons-container">
+        <div class="left-button">
+          <label for="turma">Turma</label>
+          <select id="turma" class="combobox">
+          </select>
+        </div>
+        <div class="right-button">
+          <label for="tipo">Tipo</label>
+          <select id="tipo" class="combobox1">
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label for="descricao">Descrição</label>
+        <textarea id="myTextarea" required></textarea>
+      </div>
+
+
+      <div>
+        <label for="relator">Observador(s)</label>
+        <textarea id="myTextarea2" required></textarea>
+      </div>
+
+
+      <label for="data">Data</label>
+      <input type="date" id="data" name="data">
+
+
+      <button type="click" id="shareBtn">Compartilhar Registro</button>
+
+    </form>
+  </div>
+
+
+  <script>
+    var select = document.getElementById("turma");
+    var data = [
+
+      { "value": "0", "text": "7º A" },
+      { "value": "1", "text": "7º B" },
+      { "value": "2", "text": "8º A" },
+      { "value": "3", "text": "8º B" },
+      { "value": "4", "text": "9º A" },
+      { "value": "5", "text": "9º B" },
+      { "value": "6", "text": "1º A" },
+      { "value": "7", "text": "1º B" },
+      { "value": "8", "text": "2º A" },
+      { "value": "9", "text": "2º B" },
+      { "value": "10", "text": "3º A" },
+      { "value": "11", "text": "3º B" },
+      { "value": "12", "text": "Turmas" }
+    ];
+
+    for (var i = 0; i < data.length; i++) {
+      var option = document.createElement("option");
+      option.value = data[i].value;
+      option.text = data[i].text;
+      select.appendChild(option);
+    }
+  </script>
+
+  <script>
+    var select = document.getElementById("tipo");
+    var data = [
+      { "value": 0, "text": "Ponto Positivo" },
+      { "value": 1, "text": "Ponto de Atenção" },
+      { "value": 2, "text": "Indisciplina escolar" },
+      { "value": 3, "text": "Falta de respeito" },
+      { "value": 4, "text": "Ausência escolar" },
+      { "value": 5, "text": "Danos/Crimes contra o patrimônio" },
+      { "value": 6, "text": "Agressões/Ameaças" },
+      { "value": 7, "text": "Consumo de substâncias proibidas" },
+      { "value": 8, "text": "Venda de substâncias proibidas" },
+      { "value": 9, "text": "Posse de arma ou material perigoso" },
+      { "value": 10, "text": "Assédio moral/sexual" },
+      { "value": 11, "text": "Violência moral/sexual" },
+      { "value": 12, "text": "Prática de bullying" },
+      { "value": 13, "text": "Vítima de bullying" },
+      { "value": 14, "text": "Outro" }
+    ];
+
+    for (var i = 0; i < data.length; i++) {
+      var option = document.createElement("option");
+      option.value = data[i].value;
+      option.text = data[i].text;
+      select.appendChild(option);
+    }
+  </script>
+
+  <script>
+    var textarea = document.getElementById("myTextarea1");
+
+    textarea.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+      }
+    });
+  </script>
+
+  <script>
+    var textarea = document.getElementById("myTextarea2");
+
+    textarea.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+      }
+    });
+  </script>
+
+  <script>
+    document.getElementById("bom").addEventListener("click", function () {
+      document.getElementById("shareBtn").style.backgroundColor = "#228800";
+    });
+
+    document.getElementById("mau").addEventListener("click", function () {
+      document.getElementById("shareBtn").style.backgroundColor = "#b91228";
+    });
+
+  </script>
+
+
+  <script>
+    document.getElementById("shareBtn").addEventListener("click", function () {
+
+
+      var radio1 = document.getElementById('bom');
+      var bom = "";
+
+      if (radio1.checked) {
+        bom = "Ponto Positivo";
+      } else {
+        bom = "Indiciplina";
+      }
+
+
+      var relator = document.getElementById('myTextarea2').value;
+      var aluno = document.getElementById('myTextarea1').value;
+      var descricao = document.getElementById('myTextarea').value;
+
+      var data = document.getElementById('data').value;
+      var parts = data.split("/"); // Supõe-se que o formato da data seja DD/MM/AAAA
+      var day = parts[0];
+      var month = parts[1];
+      var year = parts[2];
+
+      var formattedDate = day + "-" + month + "-" + year;
+
+      var combobox = document.getElementById("turma");
+      var turma = combobox.options[combobox.selectedIndex].text;
+
+      var combobox = document.getElementById("tipo");
+      var tipo = combobox.options[combobox.selectedIndex].text;
+
+      if (relator && aluno && descricao && data && turma && tipo) {
+
+        var emojiBom = '\u{1F44D}';
+        var emojiMau = '\u{1F44E}';
+
+
+        var clipboardContent = "";
+        if (bom = "Ponto Positivo") {
+          clipboardContent += emojiBom + " " + bom + " " + emojiBom + "\n";
+        } else {
+          clipboardContent += emojiMau + " " + bom + " " + emojiMau + "\n";
+        };
+
+        clipboardContent += "Aluno(s): " + aluno + "\n";
+        clipboardContent += "Turma: " + turma + "\n";
+        clipboardContent += "Tipo: " + tipo + "\n";
+        clipboardContent += "Descrição: " + descricao + "\n";
+        clipboardContent += "\n";
+        clipboardContent += "Data: " + data + "\n";
+        clipboardContent += "Observador(es): " + relator + "\n";
+        clipboardContent += "by https://cepicc.netlify.app/";
+
+
+        // Exemplo de mensagem
+        var mensagem = clipboardContent;
+
+        if (navigator.share) {
+          navigator.share({
+            title: "Registro",
+            text: mensagem
+          })
+        }
+
+      }
+
+
+    });
+
+    var dataInput = document.getElementById('data');
+    var dataAtual = new Date();
+    var dataFormatada = dataAtual.toISOString().substring(0, 10);
+    dataInput.value = dataFormatada;
+
+  </script>
+  <!-- <script>
+    const width = screen.width;
+    const height = screen.height;
+    alert(`A largura do monitor é ${width} pixels e a altura é ${height} pixels.`);
+  </script> -->
+
+
+</body>
+
+</html>

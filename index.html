@@ -213,12 +213,11 @@
         var emojiBom = '\u{1F44D}';
         var emojiMau = '\u{1F44E}';
 
-
         var clipboardContent = "";
-        if (bom = "Ponto Positivo") {
-          clipboardContent += emojiBom + " " + bom + " " + emojiBom + "\n";
+        if (bom == "Ponto Positivo") {
+          clipboardContent += emojiBom + " *" + bom + "* " + emojiBom + "\n";
         } else {
-          clipboardContent += emojiMau + " " + bom + " " + emojiMau + "\n";
+          clipboardContent += emojiMau + " *" + bom + "* " + emojiMau + "\n";
         };
 
         clipboardContent += "*Aluno:* " + aluno + "\n";

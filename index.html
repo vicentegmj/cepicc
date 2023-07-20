@@ -15,7 +15,7 @@
     <div class="titulo">
       <h1>Registro Escolar</h1>
       <p class="subtitulo">CEPI Cultura e Cooperativismo</p>
-      <p class="subtitulo">vicente.gmj@gmail.com</p>
+      <!-- <p class="subtitulo">vicente.gmj@gmail.com</p> -->
     </div>
     <form id="registroForm">
 
@@ -62,16 +62,27 @@
 
 
       <div>
+        <label for="andamento">Sujestão de Encaminhamento</label>
+        <textarea id="myTextarea4" required></textarea>
+      </div>
+
+
+      <div>
         <label for="relator">Observador(s)</label>
         <textarea id="myTextarea2" required></textarea>
       </div>
 
 
+
       <label for="data">Data</label>
       <input type="date" id="data" name="data">
 
-
       <button type="click" id="shareBtn">Compartilhar Registro</button>
+
+      <div class="email">
+        <p class="subtitulo">Prof. Vicente (vicente.gmj@gmail.com)</p>
+      </div>
+      
 
     </form>
   </div>
@@ -181,6 +192,7 @@
       var relator = document.getElementById('myTextarea2').value;
       var aluno = document.getElementById('myTextarea1').value;
       var descricao = document.getElementById('myTextarea').value;
+      var sujestao = document.getElementById('myTextarea4').value;
 
       var data = document.getElementById('data').value;
       var parts = data.split("/"); // Supõe-se que o formato da data seja DD/MM/AAAA
@@ -213,6 +225,7 @@
         clipboardContent += "Turma: " + turma + "\n";
         clipboardContent += "Tipo: " + tipo + "\n";
         clipboardContent += "Descrição: " + descricao + "\n";
+        clipboardContent += "Sujestão de Encaminhamento: " + sujestao + "\n";
         clipboardContent += "\n";
         clipboardContent += "Data: " + data + "\n";
         clipboardContent += "Observador(es): " + relator + "\n";

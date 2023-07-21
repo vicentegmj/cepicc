@@ -63,7 +63,7 @@
 
       <div>
         <label for="andamento">Sujestão de Encaminhamento</label>
-        <textarea id="myTextarea4" required></textarea>
+        <textarea id="myTextarea4"></textarea>
       </div>
 
 
@@ -224,7 +224,9 @@
         clipboardContent += "*Turma:* " + turma + "\n";
         clipboardContent += "*Tipo:* " + tipo + "\n";
         clipboardContent += "*Descrição:* " + descricao + "\n";
-        clipboardContent += "*Sujestão de Encaminhamento:* " + sujestao + "\n";
+        if (sujestao != ''){
+          clipboardContent += "*Sujestão de Encaminhamento:* " + sujestao + "\n";
+        }   
         clipboardContent += "*Observador:* " + relator + "\n";
         clipboardContent += "\n";
         clipboardContent += "*Data:* " + data + "\n";

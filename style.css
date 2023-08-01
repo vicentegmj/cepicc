@@ -16,7 +16,7 @@ body {
 .container {
   background-color: #fff;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
@@ -26,6 +26,7 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #00008B;
+  font-size: 22px;
 }
 
 label {
@@ -195,7 +196,7 @@ h1 {
 
 #myTextarea {
   width: 360px;
-  height: 100px;
+  height: 80px;
   font-size: 14px;
   padding: 5px;
   border: 1px solid #ccc;
@@ -207,7 +208,7 @@ h1 {
 
 #myTextarea1 {
   width: 360px;
-  height: 60px;
+  height: 50px;
   font-size: 14px;
   padding: 5px;
   border: 1px solid #ccc;
@@ -231,7 +232,7 @@ h1 {
 
 #myTextarea4 {
   width: 360px;
-  height: 80px;
+  height: 60px;
   font-size: 14px;
   padding: 5px;
   padding-top: 10px;

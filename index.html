@@ -15,7 +15,6 @@
     <div class="titulo">
       <h1>CEPI Cultura e Cooperativismo</h1>
       <p class="subtitulo">Registro Escolar</p>
-      <!-- <p class="subtitulo">vicente.gmj@gmail.com</p> -->
     </div>
     <form id="registroForm">
 
@@ -195,7 +194,7 @@
       var sujestao = document.getElementById('myTextarea4').value;
 
       var data = document.getElementById('data').value;
-      var parts = data.split("/"); // Supõe-se que o formato da data seja DD/MM/AAAA
+      var parts = data.split("/");
       var day = parts[0];
       var month = parts[1];
       var year = parts[2];
@@ -230,10 +229,10 @@
         clipboardContent += "*Observador:* " + relator + "\n";
         clipboardContent += "\n";
         clipboardContent += "*Data:* " + data + "\n";
+        clipboardContent += "*CEPI Cultura e Cooperativismo*";
         clipboardContent += "*by* https://cepicc.netlify.app/";
 
 
-        // Exemplo de mensagem
         var mensagem = clipboardContent;
 
         if (navigator.share) {
@@ -254,11 +253,6 @@
     dataInput.value = dataFormatada;
 
   </script>
-  <!-- <script>
-    const width = screen.width;
-    const height = screen.height;
-    alert(`A largura do monitor é ${width} pixels e a altura é ${height} pixels.`);
-  </script> -->
 
 
 </body>

@@ -193,35 +193,23 @@
       var descricao = document.getElementById('myTextarea').value;
       var sujestao = document.getElementById('myTextarea4').value;
 
-      var data = document.getElementById('data').value;
-      var parts = data.split("/");
-    
-      var currentTime = new Date();
-      var currentHour = currentTime.getHours();
-      var currentMinute = currentTime.getMinutes();
-
-      // Formatação para adicionar um zero à esquerda se a hora ou minuto for menor que 10
-      if (currentHour < 10) {
-          currentHour = '0' + currentHour;
-      }
-
-      if (currentMinute < 10) {
-          currentMinute = '0' + currentMinute;
-      }
-
-      var horaAtual = currentHour + ':' + currentMinute;
+      var dataInput = document.getElementById('data');
+      var dataAtual = new Date();
+      var dia = dataAtual.getDate();
+      var mes = dataAtual.getMonth() + 1; 
+      var ano = dataAtual.getFullYear();
+      var hora = dataAtual.getHours();
+      var minutos = dataAtual.getMinutes();
 
 
-      if (parts.length === 3) {
-          var day = parts[0];
-          var month = parts[1];
-          var year = parts[2];
+      dia = dia < 10 ? '0' + dia : dia;
+      mes = mes < 10 ? '0' + mes : mes;
+      hora = hora < 10 ? '0' + hora : hora;
+      minutos = minutos < 10 ? '0' + minutos : minutos;
 
-          var formattedDate = day + "-" + month + "-" + year + ' ' + horaAtual;
-          console.log(formattedDate);
-      } else {
-          console.log("Formato de data inválido. Use o formato dia/mês/ano.");
-      }
+      var dataFormatada = dia + '/' + mes + '/' + ano + ' ' + hora + ':' + minutos+'h';
+      // dataInput.value = dataFormatada;
+
 
       var combobox = document.getElementById("turma");
       var turma = combobox.options[combobox.selectedIndex].text;
@@ -250,7 +238,7 @@
         }   
         clipboardContent += "*Observador:* " + relator + "\n";
         clipboardContent += "\n";
-        clipboardContent += "*Data:* " + data + ' ' + horaAtual + "\n";
+        clipboardContent += "*Data:* " + dataFormatada + "\n";
         clipboardContent += "*CEPI Cultura e Cooperativismo*" + "\n";
 
 

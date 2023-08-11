@@ -48,7 +48,7 @@
           </select>
         </div>
         <div class="right-button">
-          <label for="tipo">Tipo</label>
+          <label for="tipo">Assunto</label>
           <select id="tipo" class="combobox1">
           </select>
         </div>
@@ -195,11 +195,33 @@
 
       var data = document.getElementById('data').value;
       var parts = data.split("/");
-      var day = parts[0];
-      var month = parts[1];
-      var year = parts[2];
+    
+      var currentTime = new Date();
+      var currentHour = currentTime.getHours();
+      var currentMinute = currentTime.getMinutes();
 
-      var formattedDate = day + "-" + month + "-" + year;
+      // Formatação para adicionar um zero à esquerda se a hora ou minuto for menor que 10
+      if (currentHour < 10) {
+          currentHour = '0' + currentHour;
+      }
+
+      if (currentMinute < 10) {
+          currentMinute = '0' + currentMinute;
+      }
+
+      var horaAtual = currentHour + ':' + currentMinute;
+
+
+      if (parts.length === 3) {
+          var day = parts[0];
+          var month = parts[1];
+          var year = parts[2];
+
+          var formattedDate = day + "-" + month + "-" + year + ' ' + horaAtual;
+          console.log(formattedDate);
+      } else {
+          console.log("Formato de data inválido. Use o formato dia/mês/ano.");
+      }
 
       var combobox = document.getElementById("turma");
       var turma = combobox.options[combobox.selectedIndex].text;
@@ -221,7 +243,7 @@
 
         clipboardContent += "*Aluno:* " + aluno + "\n";
         clipboardContent += "*Turma:* " + turma + "\n";
-        clipboardContent += "*Tipo:* " + tipo + "\n";
+        clipboardContent += "*Assunto:* " + tipo + "\n";
         clipboardContent += "*Descrição:* " + descricao + "\n";
         if (sujestao != ''){
           clipboardContent += "*Sujestão de Encaminhamento:* " + sujestao + "\n";

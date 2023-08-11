@@ -1,0 +1,67 @@
+Git
+
+no cmder:
+	git config --global --list
+	git config --global user.name "Vicente Junior
+	git config --global user.email vicente.gmj@gmail.com
+na pasta do projeto
+	git init (cria a pasta .git e começa a rastrear os arquivos)
+	TODOS OS ARQUIVOS DA PASTA FICAM COM STATUS (U)
+	QUANDO O ARQUIVO COM A PASTA JÁ RASTREADA PELO GIT ELE FICA COM STATUS (U)
+	git status (verificar status arquivos)
+	git add "nome_arquivo" prepara o arquivo para ser comitado (A)
+	git rm --cached para voltar o arquivo volta para status modoficado (U)
+	git add . prepara todos os arquivos do diretório para ser comitado (A) 
+	git commit -m "Adicionado o arquivo index.html"
+	git log mostra um histórico dos commits
+	git log --oneline mostra um histórico condensado dos commits
+	
+	Ao alterar um arquivo ele fica com status (M) modificado
+	
+	git add . 
+	git commit -m "Adicionado o arquivo index.html"
+	
+	REVERTENDO COMMITS
+	1) CHECKOUT
+		git checkout fb9dfba (cód copiado do git log --oneline)
+		git checkout master (retorna para o último estado de commit)
+	2) REVERT 
+		git revert fb9dfba altera para um ponto passado do histórico, mas não exclui o hitórico
+	3) RESET 
+		git reset a391d3e --hard retorna para um passado do histórico, e exclui o hitórico do futuro
+		
+	IGNORANDO ARQUIVOS (Git não rastrea arquivo ou pasta)
+	criar o arquivo .gitignore
+	e coloca o nome do arquivo, ou de pasta no corpo do texto do .gitignore
+	
+	CRIANDO BRANCHS
+	git branch verifica os branchs existentes
+	git branch nome_novo_branch cria um novo branch
+	git checkout nome_branch faz a troca entre branchs
+	
+	CRIANDO DELETANDO
+	git branch -d nome_branch delete branch (-d não permite se houver arquivos no branch ainda não commitados)
+	git branch -D nome_branch delete branch (-D deleta de qualquer forma)
+	
+	FUNDINDO BRANCHS
+	primeiramente vai para o branch de destino
+	git merge nome_branch pra ser fundido (pode dar conflito)
+	
+	PUSH
+	git push https://github.com/vicentegmj/projeto-1.git master
+	criando alias
+	git remote add origin https://github.com/vicentegmj/projeto-1.git
+	git remote -v para ver o alias origin 
+	
+	CLONAR DO GIT PARA LOCAL (ELE PRÓRPRIO CRIA A PASTA)
+	primeiro cria o projeto no git e copia a url do projeto
+	git clone https://github.com/vicentegmj/projeto-2.git
+	para clonar com nome diferente
+	git clone https://github.com/vicentegmj/projeto-2.git projeto-3
+	
+	PULL
+	faz merge do repositório do git no projeto local
+	git pull origin master
+	
+	
+	

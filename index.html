@@ -115,30 +115,54 @@
   </script>
 
   <script>
-    var select = document.getElementById("tipo");
-    var data = [
-      { "value": 0, "text": "Ponto Positivo" },
-      { "value": 1, "text": "Ponto de Atenção" },
-      { "value": 2, "text": "Indisciplina escolar" },
-      { "value": 3, "text": "Falta de respeito" },
-      { "value": 4, "text": "Prática de bullying" },
-      { "value": 5, "text": "Vítima de bullying" },
-      { "value": 6, "text": "Agressões/Ameaças" },
-      { "value": 7, "text": "Assédio moral/sexual" },
-      { "value": 8, "text": "Violência moral/sexual" },
-      { "value": 9, "text": "Danos/Crimes contra o patrimônio" },
-      { "value": 10, "text": "Consumo de substâncias proibidas" },
-      { "value": 11, "text": "Venda de substâncias proibidas" },
-      { "value": 12, "text": "Posse de arma ou material perigoso" },
-      { "value": 13, "text": "Ausência escolar" },
-      { "value": 14, "text": "Outro" }
-    ];
+    document.getElementById("bom").addEventListener("click", function () {
+      setTipoOptions(true); // Chama a função para definir os itens do tipo
+    });
 
-    for (var i = 0; i < data.length; i++) {
-      var option = document.createElement("option");
-      option.value = data[i].value;
-      option.text = data[i].text;
-      select.appendChild(option);
+    document.getElementById("mau").addEventListener("click", function () {
+      setTipoOptions(false); // Chama a função para definir os itens do tipo
+    });
+
+    function setTipoOptions(isBom) {
+      var select = document.getElementById("tipo");
+      select.innerHTML = ""; // Limpa as opções existentes
+
+      var tipoData = [];
+
+      if (isBom) {
+        tipoData = [
+          { "value": 0, "text": "Ponto Positivo" },
+          { "value": 1, "text": "Ótimo Comportamento" },
+          { "value": 2, "text": "Ajudou o Professor" },
+          { "value": 3, "text": "Ajudou o Colega" },
+          { "value": 4, "text": "Colaborou com a limpeza da escola" },
+          { "value": 5, "text": "Outro" },
+        ];
+      } else {
+        tipoData =  [
+          { "value": 0, "text": "Ponto de Atenção" },
+          { "value": 1, "text": "Indisciplina escolar" },
+          { "value": 2, "text": "Falta de respeito" },
+          { "value": 3, "text": "Prática de bullying" },
+          { "value": 4, "text": "Vítima de bullying" },
+          { "value": 5, "text": "Agressões/Ameaças" },
+          { "value": 6, "text": "Assédio moral/sexual" },
+          { "value": 7, "text": "Violência moral/sexual" },
+          { "value": 8, "text": "Danos/Crimes contra o patrimônio" },
+          { "value": 9, "text": "Consumo de substâncias proibidas" },
+          { "value": 10, "text": "Venda de substâncias proibidas" },
+          { "value": 11, "text": "Posse de arma ou material perigoso" },
+          { "value": 12, "text": "Ausência escolar" },
+          { "value": 13, "text": "Outro" }
+        ];
+      }
+
+      for (var i = 0; i < tipoData.length; i++) {
+        var option = document.createElement("option");
+        option.value = tipoData[i].value;
+        option.text = tipoData[i].text;
+        select.appendChild(option);
+      }
     }
   </script>
 
@@ -193,13 +217,23 @@
       var descricao = document.getElementById('myTextarea').value;
       var sujestao = document.getElementById('myTextarea4').value;
 
-      var data = document.getElementById('data').value;
-      var parts = data.split("/");
-      var day = parts[0];
-      var month = parts[1];
-      var year = parts[2];
+      var dataInput = document.getElementById('data');
+      var dataAtual = new Date();
+      var dia = dataAtual.getDate();
+      var mes = dataAtual.getMonth() + 1; 
+      var ano = dataAtual.getFullYear();
+      var hora = dataAtual.getHours();
+      var minutos = dataAtual.getMinutes();
 
-      var formattedDate = day + "-" + month + "-" + year;
+
+      dia = dia < 10 ? '0' + dia : dia;
+      mes = mes < 10 ? '0' + mes : mes;
+      hora = hora < 10 ? '0' + hora : hora;
+      minutos = minutos < 10 ? '0' + minutos : minutos;
+
+      var dataFormatada = dia + '/' + mes + '/' + ano + ' ' + hora + ':' + minutos+'h';
+      // dataInput.value = dataFormatada;
+
 
       var combobox = document.getElementById("turma");
       var turma = combobox.options[combobox.selectedIndex].text;
@@ -221,14 +255,14 @@
 
         clipboardContent += "*Aluno:* " + aluno + "\n";
         clipboardContent += "*Turma:* " + turma + "\n";
-        clipboardContent += "*Tipo:* " + tipo + "\n";
+        clipboardContent += "*Assunto:* " + tipo + "\n";
         clipboardContent += "*Descrição:* " + descricao + "\n";
         if (sujestao != ''){
           clipboardContent += "*Sujestão de Encaminhamento:* " + sujestao + "\n";
         }   
         clipboardContent += "*Observador:* " + relator + "\n";
         clipboardContent += "\n";
-        clipboardContent += "*Data:* " + data + "\n";
+        clipboardContent += "*Data:* " + formattedDate + "\n";
         clipboardContent += "*CEPI Cultura e Cooperativismo*" + "\n";
 
 

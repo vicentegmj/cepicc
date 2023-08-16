@@ -379,14 +379,14 @@ input[type="date"] {
   margin-right: auto;
   padding-left: 25px;
   /* padding-top: 5px; */
-  width: 80px;
+  /* width: 80px; */
 }
 
 .head .right-link {
   margin-left: auto;
   padding-right: 25px;
   /* padding-top: 5px; */
-  width: 320px;
+  /* width: 320px; */
 }
 
 

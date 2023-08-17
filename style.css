@@ -362,7 +362,7 @@ input[type="date"] {
 }
 .email {
   align-items: center;
-  padding-top: 5px;
+  padding-top: 1px;
   margin: 5;
   text-align: center;
   font-weight: 700;
@@ -370,25 +370,34 @@ input[type="date"] {
 
 
 .head {
+  text-align: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+.head .radio-image {
+  display: inline-block; /* Mantém a imagem como um elemento de bloco, mas alinhado horizontalmente */
+}
+
+
+.rodape {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  box-sizing: border-box;
 }
 
-.head .left-link {
-  margin-right: auto;
-  padding-left: 25px;
-  /* padding-top: 5px; */
-  /* width: 80px; */
-}
-
-.head .right-link {
+.rodape .left-element {
+  margin-right: 20px;
   margin-left: auto;
-  padding-right: 25px;
-  /* padding-top: 5px; */
-  /* width: 320px; */
+  /* width: 180px; */
 }
 
+.rodape .right-element {
+  margin-right: auto;
+  margin-left: 20px;
+  /* width: 180px; */
+}
 
 
 

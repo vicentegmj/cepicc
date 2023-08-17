@@ -14,17 +14,10 @@
   <div class="container">
 
     <div class="head">
-      <div class="left-link">
-        <img src="logo.png" alt="Imagem" class="radio-image" width="80px" height="80px">
-      </div>
-      <div class="right-link">
-        <h1>CEPI Cultura e Cooperativismo</h1>
-      </div>
+      <img src="logo.png" alt="Imagem" class="radio-image" width="80px" height="80px">
     </div>
-    <!-- <div class="titulo">
-      <img src="logo.png" alt="Imagem" class="radio-image">
-      <h1>CEPI Cultura e Cooperativismo</h1>
-    </div> -->
+    <h1>CEPI Cultura e Cooperativismo</h1>
+
     <form id="registroForm">
 
 
@@ -39,13 +32,12 @@
           <label class="radio-container">
             <input type="radio" id="mau" name="opcao" />
             <span class="emoji">😔👎</span>
-
           </label>
         </div>
       </div>
 
       <div>
-        <label for="aluno">Aluno</label>
+        <label for="aluno">Alunos</label>
         <textarea id="myTextarea1" required></textarea>
       </div>
 
@@ -80,16 +72,26 @@
       </div>
 
 
+      <!-- <label for="data">Data</label>
+      <input type="date" id="data" name="data" width="200px">
+      <button type="click" id="shareBtn">Compartilhar Registro</button> -->
 
-      <label for="data">Data</label>
-      <input type="date" id="data" name="data">
+      <div class="rodape">
+        <div class="left-element">
+          <label for="data">Data</label>
+          <input style="width:160px;" type="date" id="data" name="data">
+        </div>
+        <div class="right-element">
+          <button style="width:160px;" type="click" id="shareBtn">Compartilhar Registro</button>
+        </div>
+      </div>
 
-      <button type="click" id="shareBtn">Compartilhar Registro</button>
 
       <div class="email">
         <p class="subtitulo">Prof. Vicente (vicente.gmj@gmail.com)</p>
       </div>
-      
+
+    
 
     </form>
   </div>

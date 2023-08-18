@@ -11,13 +11,6 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 80vh;
-
-  /* Define a imagem de marca d'água como fundo 
-  background-image: url('logo.png');
-  background-repeat: repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-color: rgba(255, 255, 255, 0.2); /* Define a opacidade da cor de fundo */
 }
 
 .container {
@@ -227,7 +220,7 @@ h1 {
 
 #myTextarea2 {
   width: 360px;
-  height: 30px;
+  height: 40px;
   font-size: 14px;
   padding: 5px;
   border: 1px solid #ccc;
@@ -239,7 +232,7 @@ h1 {
 
 #myTextarea4 {
   width: 360px;
-  height: 40px;
+  height: 60px;
   font-size: 14px;
   padding: 5px;
   padding-top: 10px;
@@ -344,17 +337,6 @@ input[type="date"] {
   padding-bottom: 10px;
 }
 
-.radio-label {
-  display: flex;
-  align-items: center;
-  margin-right: 10px; /* Espaçamento entre o label e a imagem */
-}
-
-.radio-image {
-  max-width: 60px; /* Ajuste a largura máxima conforme necessário */
-  height: auto;
-}
-
 .emoji {
   margin-right: 5px;
   font-size: 20px;
@@ -362,42 +344,13 @@ input[type="date"] {
 }
 .email {
   align-items: center;
-  padding-top: 1px;
+  padding-top: 5px;
   margin: 5;
   text-align: center;
   font-weight: 700;
 }
 
 
-.head {
-  text-align: center; /* Centraliza o conteúdo horizontalmente */
-}
-
-.head .radio-image {
-  display: inline-block; /* Mantém a imagem como um elemento de bloco, mas alinhado horizontalmente */
-}
-
-
-.rodape {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  box-sizing: border-box;
-}
-
-.rodape .left-element {
-  margin-right: 20px;
-  margin-left: auto;
-  /* width: 180px; */
-}
-
-.rodape .right-element {
-  margin-right: auto;
-  margin-left: 20px;
-  /* width: 180px; */
-}
 
 
 
